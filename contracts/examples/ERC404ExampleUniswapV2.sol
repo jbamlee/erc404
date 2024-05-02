@@ -16,7 +16,7 @@ contract ERC404ExampleUniswapV2 is Ownable, ERC404, ERC404UniswapV2Exempt {
     address initialMintRecipient_,
     address uniswapV2Router_
   )
-    ERC404(name_, symbol_, decimals_)
+    ERC404(name_, symbol_, 1, decimals_)
     Ownable(initialOwner_)
     ERC404UniswapV2Exempt(uniswapV2Router_)
   {
