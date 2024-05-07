@@ -15,7 +15,6 @@ interface IERC404 is IERC165 {
   error RecipientIsERC721TransferExempt();
   error Unauthorized();
   error InsufficientAllowance();
-  error BaseUnitTooLow();
   error DecimalsTooLow();
   error PermitDeadlineExpired();
   error InvalidSigner();

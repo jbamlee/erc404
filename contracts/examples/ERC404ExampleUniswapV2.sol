@@ -16,13 +16,13 @@ contract ERC404ExampleUniswapV2 is Ownable, ERC404, ERC404UniswapV2Exempt {
     address initialMintRecipient_,
     address uniswapV2Router_
   )
-    ERC404(name_, symbol_, 1, decimals_)
+    ERC404(name_, symbol_, decimals_)
     Ownable(initialOwner_)
     ERC404UniswapV2Exempt(uniswapV2Router_)
   {
     // Do not mint the ERC721s to the initial owner, as it's a waste of gas.
     _setERC721TransferExempt(initialMintRecipient_, true);
-    _mintERC20(initialMintRecipient_, maxTotalSupplyERC721_ * units);
+    _mintERC20(initialMintRecipient_, maxTotalSupplyERC721_ * _unit());
   }
 
   function tokenURI(uint256 id_) public pure override returns (string memory) {
